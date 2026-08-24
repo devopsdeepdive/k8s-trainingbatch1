@@ -1,0 +1,10 @@
+apiVersion: v1 # versionof API which our k8s cluster touse
+kind: Pod  #type of resources/object
+metadata: #information 
+  name: nginx # pod name
+spec: #specifications
+  containers:  
+  - name: nginx #container name
+    image: nginx:1.14.2 #image docker hub/ registry
+    ports:
+    - containerPort: 80 #
