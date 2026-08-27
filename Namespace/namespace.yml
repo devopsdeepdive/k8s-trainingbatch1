@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeployment
+  namespace: develop
+  labels:
+    app: myapp  # deployment template
+spec:
+  replicas: 3   # replicaset template
+  selector:
+    matchLabels:
+      app: myapp
+  template:  #pod template
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.30
+        ports:
+        - containerPort: 80
